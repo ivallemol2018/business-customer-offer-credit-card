@@ -28,6 +28,8 @@ paths:
       - $ref: '#/components/parameters/app-code'
       - $ref: '#/components/parameters/caller-name'
       - $ref: '#/components/parameters/Ocp-Apim-Subscription-Key'
+      requestBody:
+        $ref: '#/components/requestBodies/CustomerOfferProcedure'
       responses:
         '200':
           description: OK
@@ -48,6 +50,12 @@ paths:
         '504':
           $ref: '#/components/responses/GatewayTimeout'
 components:
+  requestBodies:
+    CustomerOfferProcedure:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CustomerOfferProcedure'
   parameters:
     Authorization:
       name: Authorization
@@ -253,6 +261,24 @@ components:
           path: backend.service
           url: http://documentacion-to-fix-error.com/service-unavailable
   schemas:
+    name:
+      type: object
+      properties:
+        Names:
+          type: string
+          description: 'A name is a word or phrase that constitutes the distinctive designation of a person, place, thing or concept. (UN/CEFAT)'
+          format: datatype
+      description: "Name by which a party is known and which is usually used to identify that party. (ISO20022)\n"
+    party:
+      type: object
+      properties:
+        PartyName:
+          $ref: '#/components/schemas/name'
+    CustomerOfferProcedure:
+      type: object
+      properties:
+        PartyReference:
+          $ref: '#/components/schemas/party'
     Code:
       type: string
       title: Code
