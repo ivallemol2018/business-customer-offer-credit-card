@@ -261,7 +261,7 @@ components:
           path: backend.service
           url: http://documentacion-to-fix-error.com/service-unavailable
   schemas:
-    name:
+    Name:
       type: object
       properties:
         Names:
@@ -269,16 +269,16 @@ components:
           description: 'A name is a word or phrase that constitutes the distinctive designation of a person, place, thing or concept. (UN/CEFAT)'
           format: datatype
       description: "Name by which a party is known and which is usually used to identify that party. (ISO20022)\n"
-    party:
+    Party:
       type: object
       properties:
         PartyName:
-          $ref: '#/components/schemas/name'
+          $ref: '#/components/schemas/Name'
     CustomerOfferProcedure:
       type: object
       properties:
         PartyReference:
-          $ref: '#/components/schemas/party'
+          $ref: '#/components/schemas/Party'
     Code:
       type: string
       title: Code
