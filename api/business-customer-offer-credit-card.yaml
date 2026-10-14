@@ -264,7 +264,7 @@ components:
     Name:
       type: object
       properties:
-        Names:
+        names:
           type: string
           description: 'A name is a word or phrase that constitutes the distinctive designation of a person, place, thing or concept. (UN/CEFAT)'
           format: datatype
