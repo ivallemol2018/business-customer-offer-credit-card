@@ -25,5 +25,4 @@ jobs:
       #   Calculadas:   R-GENM02, R-DATM01, R-DATM04  (resueltas por el script)
       #   Verificación: R-GENM01, R-OPEM01, R-DATM02, R-DATM05 (resueltas por Copilot)
       copilot_model: 'gpt-4o'          # opcional, 'gpt-4o' es el default
-    secrets:
-      github_token: ${{ secrets.GITHUB_TOKEN }}
+    secrets: inherit
