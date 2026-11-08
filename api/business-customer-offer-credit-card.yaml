@@ -315,12 +315,12 @@ components:
       type: string
       title: Url
       maxLength: 200
-      description: Ubicacion de la documentacion 
+      description: Ubicacion de la documentacion para soporte del problema.
       example: https://documentation-to-fix-error.com/como-consultar-datos-usuario-info
     ApiExceptionDetail:
       type: object
       title: ApiExceptionDetail
-      description: Contiene la lista de 
+      description: Contiene la lista de detalles para mayor detalle del error originado
       example:
         code: TL0001
         description: Error al llamar al servicio
