@@ -17,7 +17,7 @@ permissions:
 jobs:
   api-governance:
     name: Revisar contratos OpenAPI
-    uses: ivallemol2018/api-governance/.github/workflows/api-governance.yml@main
+    uses: ivallemol2018/api-governance/.github/workflows/api-governance.yaml@main
     with:
       # Glob de contratos dentro de ESTE repo (coincide con paths: de arriba)
       contracts_path: 'contracts/**/*.yaml,specs/**/*.json'
