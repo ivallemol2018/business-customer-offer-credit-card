@@ -320,7 +320,7 @@ components:
     ApiExceptionDetail:
       type: object
       title: ApiExceptionDetail
-      description: Contiene la lista de detalles para mayor detalle del error originado.
+      description: Contiene la lista de detalles para mayor detalle del error originado..
       example:
         code: TL0001
         description: Error al llamar al servicio
