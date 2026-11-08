@@ -1,21 +1,29 @@
-name: Verificación semántica de contratos openapi y asincapi
-
-# La lógica, las reglas y el glosario viven en el repositorio central gobierno-apis.
-# Este archivo solo activa el check. No es necesario configurar nada en este repo:
-# el token llega desde el secret de organización COPILOT_CLI_TOKEN (secrets: inherit).
-#
-# Sin filtro `paths` a propósito: si el check es obligatorio y el workflow no corre,
-# el PR quedaría bloqueado en "pending". Si el PR no toca api/, el check termina en verde.
+name: API Governance PR Review
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened, ready_for_review]
+    types: [opened, synchronize, reopened]
+    paths:
+      # Ajustar a la ruta real de los contratos en ESTE repo
+      - 'contracts/**'
+      - 'specs/**'
+      - 'api/**'
 
+# Permisos que el workflow reutilizable necesita para operar
 permissions:
   contents: read
   pull-requests: write
 
 jobs:
-  verificacion-semantica-api:
-    uses: ivallemol2018/gobierno-apis/.github/workflows/verificacion-semantica.yml@v1
-    secrets: inherit
+  api-governance:
+    name: Revisar contratos OpenAPI
+    uses: ivallemol2018/api-governance/.github/workflows/api-governance.yml@main
+    with:
+      # Glob de contratos dentro de ESTE repo (coincide con paths: de arriba)
+      contracts_path: 'contracts/**/*.yaml,specs/**/*.json'
+      # codigos: 'R-DATM01,R-GENM02'   # opcional: filtrar reglas específicas
+      #   Calculadas:   R-GENM02, R-DATM01, R-DATM04  (resueltas por el script)
+      #   Verificación: R-GENM01, R-OPEM01, R-DATM02, R-DATM05 (resueltas por Copilot)
+      copilot_model: 'gpt-4o'          # opcional, 'gpt-4o' es el default
+    secrets:
+      github_token: ${{ secrets.GITHUB_TOKEN }}
