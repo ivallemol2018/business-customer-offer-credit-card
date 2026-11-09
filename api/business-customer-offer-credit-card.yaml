@@ -309,7 +309,7 @@ components:
       maxLength: 200
       description: Referencia al path del Json involucrado en el error, aqui se indica
         que objecto del request, response o parametro de consulta es el involucrado con
-        el error
+        el error.
       example: Party.partyIdentification.IdentifierValue
     Url:
       type: string
