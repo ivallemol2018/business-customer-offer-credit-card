@@ -20,7 +20,7 @@ jobs:
     uses: ivallemol2018/api-governance/.github/workflows/api-governance.yaml@main
     with:
       # Glob de contratos dentro de ESTE repo (coincide con paths: de arriba)
-      contracts_path: 'contracts/**/*.yaml,specs/**/*.json'
+      contracts_path: 'contracts/**/*.yaml,specs/**/*.json,api/**/*.yaml'
       # codigos: 'R-DATM01,R-GENM02'   # opcional: filtrar reglas específicas
       #   Calculadas:   R-GENM02, R-DATM01, R-DATM04  (resueltas por el script)
       #   Verificación: R-GENM01, R-OPEM01, R-DATM02, R-DATM05 (resueltas por Copilot)
