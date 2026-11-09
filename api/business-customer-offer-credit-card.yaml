@@ -105,7 +105,7 @@ components:
             internalServerErrorExample:
               $ref: '#/components/examples/InternalServerErrorExample'
     GatewayTimeout:
-      description: El tiempo de espera para recibir una respuesta del fondo ha expirado
+      description: El tiempo de espera para recibir una respuesta del  backend ha expirado
       content:
         application/json:
           schema:
