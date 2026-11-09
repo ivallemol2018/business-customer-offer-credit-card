@@ -284,7 +284,7 @@ components:
       title: Code
       description: Codigo de error de alto, nivel, es el 2do nivel de detalle de un error,
         se basa en el http code devuelto.El formato es ERXXXX, donde XXXX es el numero
-        de errror
+        de errror.
       maxLength: 6
       example: ER0007
     ErrorType:
